@@ -1,0 +1,22 @@
+{
+    "name": "abe/elektra",
+    "license": "mit",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.0-dev"
+        }
+    },
+    "require": {
+        "php": ">=5.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Elektra\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Elektra\\Test\\": "tests/"
+        }
+    }
+}

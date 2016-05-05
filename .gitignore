@@ -1,14 +1,7 @@
-vendor/
-node_modules/
+# PHPStorm
+.idea
 
-# Laravel 4 specific
-bootstrap/compiled.php
-app/storage/
+# Composer vendor
+/vendor
 
-# Laravel 5 & Lumen specific
-bootstrap/cache/
-storage/
-.env.*.php
-.env.php
-.env
-.env.example
+.composer.lock
