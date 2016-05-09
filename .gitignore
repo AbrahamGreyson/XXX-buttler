@@ -5,3 +5,6 @@
 /vendor
 
 .composer.lock
+
+# web artisan npm dependency
+node_modules/
