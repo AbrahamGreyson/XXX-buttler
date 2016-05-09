@@ -29,9 +29,12 @@ class ElektraServiceProvider extends ServiceProvider
         });
     }
 
+    /**
+     * Boot.
+     */
     public function boot()
     {
-        $this->setComponents();
+        $this->initComponents();
         $this->publishComponentsConfig();
         $this->registerComponentsProvider();
     }
@@ -78,7 +81,7 @@ class ElektraServiceProvider extends ServiceProvider
     /**
      * Set components basic info.
      */
-    private function setComponents()
+    private function initComponents()
     {
         array_walk($this->components, function (&$value, $key) {
             $name = $dir = Str::studly($key);
