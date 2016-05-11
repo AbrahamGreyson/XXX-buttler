@@ -8,3 +8,5 @@
 
 # web artisan npm dependency
 node_modules/
+
+.npm-debug.log
