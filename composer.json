@@ -1,15 +1,11 @@
 {
     "name": "abe/elektra",
     "license": "mit",
-    "extra": {
-        "branch-alias": {
-            "dev-master": "2.0-dev"
-        }
-    },
     "require": {
         "php": ">=5.5.9",
         "illuminate/support": "~5.0",
-        "illuminate/routing": "~5.0"
+        "illuminate/routing": "~5.0",
+        "laracasts/flash": "~5.0"
     },
     "autoload": {
         "psr-4": {
@@ -19,6 +15,14 @@
     "autoload-dev": {
         "psr-4": {
             "Elektra\\Test\\": "tests/"
+        }
+    },
+    "replace": {
+        "elektra/web-artisan": "self.version",
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.0-dev"
         }
     }
 }

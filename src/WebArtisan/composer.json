@@ -1,0 +1,9 @@
+{
+    "name": "elektra/web-artisan",
+    "license": "mit",
+    "request": {
+        "php": ">=5.5.9",
+        "illuminate/routing": "~5.0",
+        "laracasts/flash":"~5.0"
+    }
+}
