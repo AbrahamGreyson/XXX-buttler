@@ -3,6 +3,7 @@
 namespace Elektra\WebArtisan;
 
 use Illuminate\Support\ServiceProvider;
+use Laracasts\Flash\FlashServiceProvider;
 
 class WebArtisanServiceProvider extends ServiceProvider
 {
@@ -21,6 +22,7 @@ class WebArtisanServiceProvider extends ServiceProvider
         $this->publishAssets();
         $this->registerResources();
         $this->registerRoutes();
+        $this->registerDependencies();
     }
 
     /**
@@ -60,5 +62,15 @@ class WebArtisanServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/resources/assets' => public_path('vendor/elektra-webartisan'),
         ]);
+    }
+
+    /**
+     * Register php dependencies.
+     */
+    private function registerDependencies()
+    {
+        $this->app->register(
+            FlashServiceProvider::class
+        );
     }
 }
