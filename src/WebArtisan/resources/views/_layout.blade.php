@@ -35,15 +35,15 @@
 </div>
 
 <div class="container bs-docs-container">
-  @yield('content')
       <!-- Example row of columns -->
   <div class="row">
     <div class="col-md-9">
       <h2 class="bd-title" id="content">
         Make
       </h2>
-        Create new file.
+      Create new file.
       <p></p>
+      @yield('content')
     </div>
     <div class="col-md-3">
       <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top">

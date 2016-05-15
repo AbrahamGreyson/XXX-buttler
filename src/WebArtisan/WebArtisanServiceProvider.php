@@ -36,7 +36,7 @@ class WebArtisanServiceProvider extends ServiceProvider
         ], function ($router) {
             /** @var \Illuminate\Routing\Router $router */
             $router->resources([
-                'generator' => 'GeneratorController',
+                'generator/{type?}' => 'GeneratorController',
                 'log'       => 'LogController',
                 'migration' => 'MigrationController',
             ]);
