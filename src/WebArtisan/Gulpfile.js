@@ -14,9 +14,13 @@ gulp.task('copy-dependencies', function ($callback) {
   gulp.src('./node_modules/bootstrap-theme-slim/dist/css/slim-min.css')
     .pipe(changed(DEST_CSS))
     .pipe(gulp.dest(DEST_CSS));
-  gulp.src('./node_modules/bootstrap-theme-slim/dist/js/bootstrap.js')
+  gulp.src('./node_modules/bootstrap-theme-slim/dist/js/bootstrap.min.js')
     .pipe(changed(DEST_JS))
     .pipe(gulp.dest(DEST_JS));
+  // bootstrap
+  gulp.src('./node_modules/bootstrap/dist/css/bootstrap.min.css')
+    .pipe(changed(DEST_CSS))
+    .pipe(gulp.dest(DEST_CSS));
 
   // custom css
   gulp.src('./resources/assets/scss/*.scss')
