@@ -15,7 +15,7 @@
   <title>Laravel Elektra Webartisan</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="/vendor/elektra-webartisan/css/slim-min.css" rel="stylesheet">
+  <link href="/vendor/elektra-webartisan/css/bootstrap.min.css" rel="stylesheet">
   <link href="/vendor/elektra-webartisan/css/docs.css" rel="stylesheet">
   <link href="/vendor/elektra-webartisan/css/app.css" rel="stylesheet">
 
@@ -23,7 +23,7 @@
   {{--<link href="grid.css" rel="stylesheet">--}}
 
       <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-  <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  <script src="/vendor/elektra-webartisan/js/ie10-viewport-bug-workaround.js"></script>
 </head>
 
 <body>
@@ -41,60 +41,11 @@
       <h2 class="bd-title" id="content">
         Make
       </h2>
-      Create new file.
-      <p></p>
+      <p>Create new file.</p>
       @yield('content')
     </div>
     <div class="col-md-3">
-      <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top">
-        <ul class="nav bs-docs-sidenav">
-          <li class="active"><a href="#">Generator</a>
-            <ul class="nav">
-              <li><a href="#">Model</a></li>
-              <li><a href="#">Controller</a></li>
-              <li><a href="#">Crud</a></li>
-              <li><a href="#">Console</a></li>
-              <li><a href="#">Migration</a></li>
-              <li><a href="#">Middleware</a></li>
-              <li><a href="#">Request</a></li>
-              <li><a href="#">Provider</a></li>
-              <li><a href="#">Policy</a></li>
-              <li><a href="#">Event</a></li>
-              <li><a href="#">Job</a></li>
-              <li><a href="#">Seeder</a></li>
-              <li><a href="#">Listener</a></li>
-              <li><a href="#">Test</a></li>
-              <li><a href="#">Auth</a></li>
-              <li><a href="#">Policy</a></li>
-            </ul>
-          </li>
-          <li class="">
-            <a href="#whats-included">What's included</a>
-            <ul class="nav">
-              <li><a href="#whats-included-precompiled">Precompiled</a></li>
-              <li><a href="#whats-included-source">Source code</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="#grunt">Compiling CSS and JavaScript</a>
-            <ul class="nav">
-              <li><a href="#grunt-installing">Installing Grunt</a></li>
-              <li><a href="#grunt-commands">Available Grunt commands</a></li>
-              <li><a href="#grunt-troubleshooting">Troubleshooting</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Log</a></li>
-          <li>
-            <a href="#examples">Examples</a>
-            <ul class="nav">
-              <li><a href="#examples-framework">Using the framework</a></li>
-              <li><a href="#examples-navbars">Navbars in action</a></li>
-              <li><a href="#examples-custom">Custom components</a></li>
-              <li><a href="#examples-experiments">Experiments</a></li>
-            </ul>
-          </li>
-        </ul>
-        <a class="back-to-top" href="#top"> Back to top </a></nav>
+      @include('elektra-webartisan::_sidebar')
     </div>
   </div>
 
