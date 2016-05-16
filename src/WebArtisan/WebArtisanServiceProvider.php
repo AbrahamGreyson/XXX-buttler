@@ -2,7 +2,9 @@
 
 namespace Elektra\WebArtisan;
 
+use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;
+use Laracasts\Flash\Flash;
 use Laracasts\Flash\FlashServiceProvider;
 
 class WebArtisanServiceProvider extends ServiceProvider
@@ -14,15 +16,22 @@ class WebArtisanServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        // TODO: Implement register() method.
+        if ('local' == $this->app->environment()) {
+            // Register facade here so we don't have to bother user with dependencies.
+            $loader = AliasLoader::getInstance();
+            $loader->alias('Flash', Flash::class);
+        }
     }
 
     public function boot()
     {
-        $this->publishAssets();
-        $this->registerResources();
-        $this->registerRoutes();
-        $this->registerDependencies();
+        if ('local' == $this->app->environment()) {
+            $this->publishAssets();
+            $this->registerResources();
+            $this->registerRoutes();
+            $this->registerDependencies();
+            $this->registerHelperFunctions();
+        }
     }
 
     /**
@@ -33,14 +42,20 @@ class WebArtisanServiceProvider extends ServiceProvider
         /** @var \Illuminate\Routing\Router $router */
         $router = $this->app['router'];
         $router->group([
-            'namespace' => __NAMESPACE__ . "\\Controllers",
-            'prefix'    => $this->app['config']->get('elektra-webartisan.route_prefix'),
+            'namespace'  => __NAMESPACE__ . "\\Controllers",
+            'prefix'     => $this->app['config']->get('elektra-webartisan.route_prefix'),
+            'middleware' => ['web'],
         ], function ($router) {
             /** @var \Illuminate\Routing\Router $router */
+            $router->get('/', function () {
+                return 'elektra index';
+            });
+            $router->get('/generator', 'GeneratorController@index')->name('elektra.generator');
+            $router->get('/generator/{generator}', 'GeneratorController@show')->name('elektra.generator.{generator}');
+            $router->post('/generator/{generator}', 'GeneratorController@generate');
             $router->resources([
-                'generator/{type?}' => 'GeneratorController',
-                'log'       => 'LogController',
-                'migration' => 'MigrationController',
+                'log'               => 'LogController',
+                'migration'         => 'MigrationController',
             ]);
         });
     }
@@ -72,5 +87,10 @@ class WebArtisanServiceProvider extends ServiceProvider
         $this->app->register(
             FlashServiceProvider::class
         );
+    }
+
+    private function registerHelperFunctions()
+    {
+        include 'functions.php';
     }
 }
