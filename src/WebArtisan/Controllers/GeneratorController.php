@@ -2,25 +2,45 @@
 
 namespace Elektra\WebArtisan\Controllers;
 
-use Illuminate\Http\Request;
+use Elektra\WebArtisan\Command;
+use Elektra\WebArtisan\Requests\GeneratorRequest;
 use Illuminate\Routing\Controller;
 
 class GeneratorController extends Controller
 {
-    public function index(Request $request, $type = null)
+    protected $generatorMap = [
+        'model',
+        'migration',
+    ];
+
+    /**
+     * @var \Elektra\WebArtisan\Command
+     */
+    private $command;
+
+    public function __construct(Command $command)
     {
-        return view('elektra-webartisan::index');
+        $this->command = $command;
     }
 
-    public function show($generator = null)
+    public function index()
     {
+        return view('elektra-webartisan::generator.index');
     }
 
-    public function store($type = null)
+    public function show($generator)
     {
-        $artisan = app()->make(\Illuminate\Contracts\Console\Kernel::class);
-        $artisan->call('make:model', ['name' => 'Daha']);
+        return view("elektra-webartisan::generator.{$generator}");
+    }
 
-        dd($artisan->output());
+    public function generate(GeneratorRequest $request, $generator)
+    {
+        $result = $this->command->call($generator, $this->generatorMap, $request);
+
+        if ($result) {
+            \Flash::message($result['output'], $result['level']);
+        }
+
+        return redirect()->back();
     }
 }
