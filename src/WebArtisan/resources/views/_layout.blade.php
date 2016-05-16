@@ -15,15 +15,17 @@
   <title>Laravel Elektra Webartisan</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="/vendor/elektra-webartisan/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/vendor/elektra-webartisan/css/bootstrap.min.css"
+        rel="stylesheet">
   <link href="/vendor/elektra-webartisan/css/docs.css" rel="stylesheet">
   <link href="/vendor/elektra-webartisan/css/app.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  {{--<link href="grid.css" rel="stylesheet">--}}
+{{--<link href="grid.css" rel="stylesheet">--}}
 
-      <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-  <script src="/vendor/elektra-webartisan/js/ie10-viewport-bug-workaround.js"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <script
+      src="/vendor/elektra-webartisan/js/ie10-viewport-bug-workaround.js"></script>
 </head>
 
 <body>
@@ -35,14 +37,15 @@
 </div>
 
 <div class="container bs-docs-container">
-      <!-- Example row of columns -->
+  <!-- Example row of columns -->
   <div class="row">
     <div class="col-md-9">
-      <h2 class="bd-title" id="content">
-        Make
-      </h2>
-      <p>Create new file.</p>
-      @yield('content')
+      @yield('formTitle')
+      @include('flash::message')
+      <form method="POST">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        @yield('content')
+      </form>
     </div>
     <div class="col-md-3">
       @include('elektra-webartisan::_sidebar')

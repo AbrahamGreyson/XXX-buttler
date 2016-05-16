@@ -47,10 +47,6 @@
         <li @if(is_active_menu('generator', 'auth')) class="active" @endif >
           <a href="{{ route('elektra.generator.{generator}', ['generator' => 'auth']) }}">Auth</a>
         </li>
-        <li @if(is_active_menu('generator', 'policy')) class="active" @endif >
-          <a href="{{ route('elektra.generator.{generator}', ['generator' => 'policy']) }}">Policy</a>
-        </li>
-
       </ul>
     </li>
     <li class="">

@@ -1,9 +1,15 @@
 @extends('elektra-webartisan::_layout')
 
+@section('formTitle')
+  <h2 class="bd-title" id="content">
+    Generator
+  </h2>
+  <p>
+    Create new file.
+  </p>
+@endsection
+
 @section('content')
-  @include('flash::message')
-  <form method="POST">
-    <input type="hidden" name="_token" value="{{ csrf_token() }}">
     <?php
     if (session()->has('errors')) {
       $formSign = ' has-danger';
@@ -46,6 +52,4 @@
         </button>
       </div>
     </div>
-  </form>
-
 @endsection

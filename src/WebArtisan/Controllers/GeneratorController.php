@@ -11,6 +11,19 @@ class GeneratorController extends Controller
     protected $generatorMap = [
         'model',
         'migration',
+        'controller',
+        'crud',
+        'console',
+        'middleware',
+        'request',
+        'provider',
+        'policy',
+        'event',
+        'job',
+        'seeder',
+        'listener',
+        'test',
+        'auth'
     ];
 
     /**
