@@ -50,14 +50,14 @@
       </ul>
     </li>
     <li class="">
-      <a href="#whats-included">What's included</a>
+      <a href="#whats-included">Migration</a>
       <ul class="nav">
         <li><a href="#whats-included-precompiled">Precompiled</a></li>
         <li><a href="#whats-included-source">Source code</a></li>
       </ul>
     </li>
     <li>
-      <a href="#grunt">Compiling CSS and JavaScript</a>
+      <a href="#grunt">Others</a>
       <ul class="nav">
         <li><a href="#grunt-installing">Installing Grunt</a></li>
         <li><a href="#grunt-commands">Available Grunt commands</a></li>
@@ -66,7 +66,7 @@
     </li>
     <li><a href="#">Log</a></li>
     <li>
-      <a href="#examples">Examples</a>
+      <a href="#examples">Languages</a>
       <ul class="nav">
         <li><a href="#examples-framework">Using the framework</a></li>
         <li><a href="#examples-navbars">Navbars in action</a></li>
