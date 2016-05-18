@@ -2,10 +2,10 @@
 
 @section('formTitle')
   <h2 class="bd-title" id="content">
-    Make model
+    Make Controller
   </h2>
   <p>
-    Create a new Eloquent model class.
+    Create a new controller class.
   </p>
 @endsection
 

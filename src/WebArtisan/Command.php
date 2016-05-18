@@ -14,6 +14,15 @@ class Command
         $this->artisan = $artisan;
     }
 
+    /**
+     * Call a artisan command.
+     *
+     * @param  string                   $generator
+     * @param  array                    $generatorMap
+     * @param  \Illuminate\Http\Request $request
+     *
+     * @return array
+     */
     public function call($generator, array $generatorMap, $request)
     {
         if (!in_array($generator, $generatorMap)) {
@@ -68,7 +77,7 @@ class Command
     }
 
     /**
-     * Convert the name contains space to snake style.
+     * Convert the name if contains space to snake style.
      *
      * @param string $name
      *

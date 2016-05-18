@@ -2,10 +2,10 @@
 
 @section('formTitle')
   <h2 class="bd-title" id="content">
-    Make model
+    Make auth
   </h2>
   <p>
-    Create a new Eloquent model class.
+    Scaffold basic login and registration views and routes.
   </p>
 @endsection
 

@@ -2,10 +2,10 @@
 
 @section('formTitle')
   <h2 class="bd-title" id="content">
-    Make model
+    Make middleware
   </h2>
   <p>
-    Create a new Eloquent model class.
+    Create a new migration file.
   </p>
 @endsection
 

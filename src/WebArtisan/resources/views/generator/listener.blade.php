@@ -2,10 +2,10 @@
 
 @section('formTitle')
   <h2 class="bd-title" id="content">
-    Make migration
+    Make listener
   </h2>
   <p>
-    Create a new migration file.
+    Create a new event listener class.
   </p>
 @endsection
 

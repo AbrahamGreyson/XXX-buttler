@@ -2,10 +2,10 @@
 
 @section('formTitle')
   <h2 class="bd-title" id="content">
-    Make migration
+    Make provider
   </h2>
   <p>
-    Create a new migration file.
+    Create a new service provider class.
   </p>
 @endsection
 

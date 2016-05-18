@@ -2,10 +2,10 @@
 
 @section('formTitle')
   <h2 class="bd-title" id="content">
-    Make migration
+    Make event
   </h2>
   <p>
-    Create a new migration file.
+    Create a new event class.
   </p>
 @endsection
 

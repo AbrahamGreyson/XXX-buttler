@@ -38,6 +38,7 @@ class GeneratorController extends Controller
 
     public function index()
     {
+
         return view('elektra-webartisan::generator.index');
     }
 

@@ -2,10 +2,10 @@
 
 @section('formTitle')
   <h2 class="bd-title" id="content">
-    Make model
+    Make CRUD
   </h2>
   <p>
-    Create a new Eloquent model class.
+    Scaffold CRUD(eg. model, controller, route.etc.) files for a specific resource.
   </p>
 @endsection
 

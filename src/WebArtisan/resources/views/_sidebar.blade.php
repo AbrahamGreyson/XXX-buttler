@@ -2,14 +2,14 @@
   <ul class="nav bs-docs-sidenav">
     <li class="active"><a href="#">Generator</a>
       <ul class="nav">
+        <li @if(is_active_menu('generator', 'crud')) class="active" @endif >
+          <a href="{{ route('elektra.generator.{generator}', ['generator' => 'crud']) }}">CRUD</a>
+        </li>
         <li @if(is_active_menu('generator', 'model')) class="active" @endif >
           <a href="{{ route('elektra.generator.{generator}', ['generator' => 'model']) }}">Model</a>
         </li>
         <li @if(is_active_menu('generator', 'controller')) class="active" @endif >
           <a href="{{ route('elektra.generator.{generator}', ['generator' => 'controller']) }}">Controller</a>
-        </li>
-        <li @if(is_active_menu('generator', 'crud')) class="active" @endif >
-          <a href="{{ route('elektra.generator.{generator}', ['generator' => 'crud']) }}">Crud</a>
         </li>
         <li @if(is_active_menu('generator', 'console')) class="active" @endif >
           <a href="{{ route('elektra.generator.{generator}', ['generator' => 'console']) }}">Console</a>
