@@ -25,8 +25,8 @@
   <div class="form-group">
     <div class="checkbox">
       <label>
-        <input type="checkbox" name="migration" value="1">
-        Create a new migration file for the model.
+        <input type="checkbox" name="resource" value="1">
+        Generate a resource controller class.
       </label>
     </div>
   </div>

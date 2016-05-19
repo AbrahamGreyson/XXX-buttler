@@ -25,8 +25,8 @@
   <div class="form-group">
     <div class="checkbox">
       <label>
-        <input type="checkbox" name="migration" value="1">
-        Create a new migration file for the model.
+        <input type="checkbox" name="command" value="1">
+        The terminal command that should be assigned. [default: "command:name"]
       </label>
     </div>
   </div>

@@ -51,8 +51,9 @@ class GeneratorController extends Controller
     {
         $result = $this->command->call($generator, $this->generatorMap, $request);
 
+
         if ($result) {
-            \Flash::message($result['output'], $result['level']);
+            \Flash::message(str_replace("\n", '<br>', $result['output']), $result['level']);
         }
 
         return redirect()->back();

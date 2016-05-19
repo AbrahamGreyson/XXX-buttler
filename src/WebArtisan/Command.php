@@ -34,23 +34,74 @@ class Command
         return call_user_func_array([$this, $method], [$request->all()]);
     }
 
-    public function makeMigration($options)
+    public function makeJob(array $options)
+    {
+        $name = ucwords($options['name']);
+
+        return $this->callLaravel('make:job', [
+            'name' => $name,
+            '--sync' => isset($options['sync'])
+        ]);
+    }
+
+    public function makeEvent(array $options)
+    {
+        $name = ucwords($options['name']);
+
+        return $this->callLaravel('make:event', [
+            'name' => $name,
+        ]);
+    }
+
+    public function makeController(array $options)
+    {
+        $name = ucwords($options['name']);
+
+        return $this->callLaravel('make:controller', [
+            'name'       => $name,
+            '--resource' => isset($options['resource']),
+        ]);
+    }
+
+    public function makeConsole(array $options)
+    {
+        $name = ucwords($options['name']);
+
+        return $this->callLaravel('make:console', [
+            'name' => $name,
+        ]);
+    }
+
+    public function makeAuth(array $options)
+    {
+
+        // todo determine if file is exists.
+        if (isset($options['overwrite'])) {
+        }
+
+        return $this->callLaravel('make:auth', [
+            '--views' => isset($options['views']),
+        ]);
+    }
+
+    public function makeMigration(array $options)
     {
         $name = $this->getMigrationName($options['name']);
+
+        // todo table name.
 
         return $this->callLaravel('make:migration', [
             'name' => $name,
         ]);
     }
 
-    public function makeModel($options)
+    public function makeModel(array $options)
     {
         $name = ucwords($options['name']);
-        $migration = isset($options['migration']) ? true : false;
 
         return $this->callLaravel('make:model', [
             'name'        => $name,
-            '--migration' => $migration,
+            '--migration' => isset($options['migration']),
         ]);
     }
 

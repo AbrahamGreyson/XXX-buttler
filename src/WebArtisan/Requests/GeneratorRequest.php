@@ -23,8 +23,17 @@ class GeneratorRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'name' => 'required',
-        ];
+        $generator = $this->route('generator');
+        $rules = [];
+        switch ($generator) {
+            case 'auth':
+                break;
+            default:
+                $rules = [
+                    'name' => 'required',
+                ];
+        }
+
+        return $rules;
     }
 }

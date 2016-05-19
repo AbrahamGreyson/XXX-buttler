@@ -22,30 +22,6 @@
       </div>
     </div>
     <div class="form-group">
-      <div class="checkbox">
-        <label>
-          <input type="checkbox" name="create" value="1">
-          The table to be created.
-        </label>
-      </div>
-    </div>
-    <div class="form-group">
-      <div class="checkbox">
-        <label>
-          <input type="checkbox" name="table" value="1">
-          The table to migrate.
-        </label>
-      </div>
-    </div>
-    <div class="form-group">
-      <div class="checkbox">
-        <label>
-          <input type="checkbox" name="path" value="1">
-          The location where the migration file should be created.
-        </label>
-      </div>
-    </div>
-    <div class="form-group">
       <div class="col-sm-12">
         <button type="submit" class="btn btn-md btn-primary center-block">
           Submit
