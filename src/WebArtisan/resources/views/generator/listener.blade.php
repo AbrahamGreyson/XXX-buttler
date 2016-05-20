@@ -19,29 +19,25 @@
       <label for="name" class="col-sm-2 form-control-label">Name</label>
       <div class="col-sm-10">
         <input id="name" name="name" type="input" class="form-control" autocomplete="off">
+        <small class="text-muted">
+          Some inline text with a small tag looks like this.
+        </small>
+      </div>
+    </div>
+    <div class="form-group row {{ $formSign or null }}">
+      <label for="event" class="col-sm-2 form-control-label">Event</label>
+      <div class="col-sm-10">
+        <input id="event" name="event" type="input" class="form-control" autocomplete="off">
+        <small class="text-muted">
+          The event class being listened for.
+        </small>
       </div>
     </div>
     <div class="form-group">
       <div class="checkbox">
         <label>
-          <input type="checkbox" name="create" value="1">
-          The table to be created.
-        </label>
-      </div>
-    </div>
-    <div class="form-group">
-      <div class="checkbox">
-        <label>
-          <input type="checkbox" name="table" value="1">
-          The table to migrate.
-        </label>
-      </div>
-    </div>
-    <div class="form-group">
-      <div class="checkbox">
-        <label>
-          <input type="checkbox" name="path" value="1">
-          The location where the migration file should be created.
+          <input type="checkbox" name="queued" value="1">
+          Indicates the event listener should be queued.
         </label>
       </div>
     </div>

@@ -34,13 +34,78 @@ class Command
         return call_user_func_array([$this, $method], [$request->all()]);
     }
 
+    public function makeTest(array $options)
+    {
+        $name = ucwords($options['name']);
+
+        return $this->callLaravel('make:test', [
+            'name' => $name,
+        ]);
+    }
+
+    public function makeSeeder(array $options)
+    {
+        $name = ucwords($options['name']);
+
+        return $this->callLaravel('make:seeder', [
+            'name' => $name,
+        ]);
+    }
+
+    public function makeRequest(array $options)
+    {
+        $name = ucwords($options['name']);
+
+        return $this->callLaravel('make:request', [
+            'name' => $name,
+        ]);
+    }
+
+    public function makeProvider(array $options)
+    {
+        $name = ucwords($options['name']);
+
+        return $this->callLaravel('make:provider', [
+            'name' => $name,
+        ]);
+    }
+
+    public function makePolicy(array $options)
+    {
+        $name = ucwords($options['name']);
+
+        return $this->callLaravel('make:policy', [
+            'name' => $name,
+        ]);
+    }
+
+    public function makeMiddleware(array $options)
+    {
+        $name = ucwords($options['name']);
+
+        return $this->callLaravel('make:middleware', [
+            'name' => $name,
+        ]);
+    }
+
+    public function makeListener(array $options)
+    {
+        $name = ucwords($options['name']);
+
+        return $this->callLaravel('make:listener', [
+            'name'     => $name,
+            '--event'  => $options['event'],
+            '--queued' => isset($options['queued']),
+        ]);
+    }
+
     public function makeJob(array $options)
     {
         $name = ucwords($options['name']);
 
         return $this->callLaravel('make:job', [
-            'name' => $name,
-            '--sync' => isset($options['sync'])
+            'name'   => $name,
+            '--sync' => isset($options['sync']),
         ]);
     }
 

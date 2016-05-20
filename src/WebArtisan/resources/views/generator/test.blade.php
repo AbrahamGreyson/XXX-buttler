@@ -23,14 +23,6 @@
     </div>
   </div>
   <div class="form-group">
-    <div class="checkbox">
-      <label>
-        <input type="checkbox" name="migration" value="1">
-        Create a new migration file for the model.
-      </label>
-    </div>
-  </div>
-  <div class="form-group">
     <div class="col-sm-12">
       <button type="submit" class="btn btn-md btn-primary center-block">
         Submit
