@@ -6,7 +6,10 @@
 
 .composer.lock
 
-# web artisan npm dependency
+# web artisan npm and bower dependency
 node_modules/
+bower_components/
 
 .npm-debug.log
+
+bower.json
