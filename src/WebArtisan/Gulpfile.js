@@ -2,6 +2,7 @@ var exec = require('child_process').exec;
 var gulp = require('gulp');
 var changed = require('gulp-changed');
 var cleanCss = require('gulp-clean-css');
+var uglify = require('gulp-uglify');
 var sass = require('gulp-sass');
 
 
@@ -21,6 +22,23 @@ gulp.task('copy-dependencies', function ($callback) {
   gulp.src('./node_modules/bootstrap/dist/css/bootstrap.min.css')
     .pipe(changed(DEST_CSS))
     .pipe(gulp.dest(DEST_CSS));
+  // jquery.js
+  gulp.src('./node_modules/jquery/dist/jquery.min.js')
+    .pipe(changed(DEST_JS))
+    .pipe(gulp.dest(DEST_JS));
+  // nprogress.js
+  gulp.src('./node_modules/nprogress/nprogress.js')
+    .pipe(uglify())
+    .pipe(changed(DEST_JS))
+    .pipe(gulp.dest(DEST_JS));
+  gulp.src('./node_modules/nprogress/nprogress.css')
+    .pipe(changed(DEST_CSS))
+    .pipe(gulp.dest(DEST_CSS));
+  // pjax
+  gulp.src('./bower_components/jquery-pjax/jquery.pjax.js')
+    .pipe(uglify())
+    .pipe(changed(DEST_JS))
+    .pipe(gulp.dest(DEST_JS));
 
   // custom css
   gulp.src('./resources/assets/scss/*.scss')
@@ -45,7 +63,10 @@ gulp.task('copy-dependencies', function ($callback) {
 });
 
 gulp.task('watch', function () {
-  gulp.watch('./resources/assets/*/*.scss', ['copy-dependencies']);
+  gulp.watch([
+    './resources/assets/*/*.scss',
+    './resources/assets/js/app.js'
+  ], ['copy-dependencies']);
 });
 
 

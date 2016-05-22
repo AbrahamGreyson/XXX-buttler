@@ -1,7 +1,7 @@
 <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top">
   <ul class="nav bs-docs-sidenav">
     <li class="active"><a href="#">Generator</a>
-      <ul class="nav">
+      <ul class="nav elektra-sidebar">
         <li @if(is_active_menu('generator', 'auth')) class="active" @endif >
           <a href="{{ route('elektra.generator.{generator}', ['generator' => 'auth']) }}">Auth</a>
         </li>

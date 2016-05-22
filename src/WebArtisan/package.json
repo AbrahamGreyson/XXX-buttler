@@ -1,6 +1,8 @@
 {
   "dependencies": {
-    "bootstrap-theme-slim": "git@github.com:overtrue/bootstrap-theme-slim.git#8bafc4dffd3d1e466b164e4795ba97cb24c828e0"
+    "bootstrap-theme-slim": "git@github.com:overtrue/bootstrap-theme-slim.git#8bafc4dffd3d1e466b164e4795ba97cb24c828e0",
+    "jquery": "^2.2.4",
+    "nprogress": "^0.2.0"
   },
   "devDependencies": {
     "gulp": "^3.9.1",

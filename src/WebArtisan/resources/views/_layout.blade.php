@@ -15,17 +15,16 @@
   <title>Laravel Elektra Webartisan</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="/vendor/elektra-webartisan/css/bootstrap.min.css"
-        rel="stylesheet">
+  <link href="/vendor/elektra-webartisan/css/bootstrap.min.css" rel="stylesheet">
   <link href="/vendor/elektra-webartisan/css/docs.css" rel="stylesheet">
+  <link href="/vendor/elektra-webartisan/css/nprogress.css" rel="stylesheet">
   <link href="/vendor/elektra-webartisan/css/app.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
 {{--<link href="grid.css" rel="stylesheet">--}}
 
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-  <script
-      src="/vendor/elektra-webartisan/js/ie10-viewport-bug-workaround.js"></script>
+  <script src="/vendor/elektra-webartisan/js/ie10-viewport-bug-workaround.js"></script>
 </head>
 
 <body>
@@ -36,7 +35,7 @@
   </div>
 </div>
 
-<div class="container bs-docs-container">
+<div class="container bs-docs-container"  id="elektra-container">
   <!-- Example row of columns -->
   <div class="row">
     <div class="col-md-9">
@@ -62,5 +61,10 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
+<script src="/vendor/elektra-webartisan/js/jquery.min.js"></script>
+{{--<script src="/vendor/elektra-webartisan/js/bootstrap.min.js"></script>--}}
+<script src="/vendor/elektra-webartisan/js/jquery.pjax.js"></script>
+<script src="/vendor/elektra-webartisan/js/nprogress.js"></script>
+<script src="/vendor/elektra-webartisan/js/app.js"></script>
 </body>
 </html>
