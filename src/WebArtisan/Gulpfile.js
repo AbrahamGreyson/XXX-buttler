@@ -59,7 +59,6 @@ gulp.task('copy-dependencies', function ($callback) {
       console.log($stdout);
       $callback();
     });
-
 });
 
 gulp.task('watch', function () {
